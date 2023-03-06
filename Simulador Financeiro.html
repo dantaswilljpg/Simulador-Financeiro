@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio calculadora</title>
+    <link rel="shortcut icon" href="img/Calculadora.jfif" type="image/x-icon" width="550" weight="750">
+    <link rel="stylesheet" href="style.css">
+<body>
+    
+          <h1>SIMULADOR FINANCEIRO</h1>
+    <p>Insira seu Nome:</p>
+    <input id="input_Nome"><br>
+    <p>Insira quantidade de hectáres que você possui na sua plantação: </p>
+    <input id="input_Hectare"><br>
+    <p>Quanto o Senhor(a) Faturou na ultima safra em R$:</p>
+    <input id="input_Faturou"><br>
+    <p>De quanto foi o custo total nesse mesmo períodoR$: </p>
+    <input id="input_Custo">
+
+    <p>Clique no botão abaixo:</p>
+    <button onclick="Calculo()">Simular:</button>
+    <div id="Valor"></div>
+</body>
+</html>
+<script>
+    function Calculo(){
+     var nome =(input_Nome.value) 
+     var QtdHectare = Number (input_Hectare.value)
+     var Faturamento = Number (input_Faturou.value)
+     var CustosTotais = Number (input_Custo.value)
+     var TamanhoTerreno = QtdHectare * 10000
+     var PorcentagemPerdaCacau= TamanhoTerreno *0.30
+     var Lucro = Faturamento - CustosTotais
+     var MargemLucro = (Lucro/Faturamento)*100
+     var AumentoLucro = MargemLucro*1.5
+     
+
+    
+  
+     
+
+    Valor.innerHTML+= `<span style="color:black">Olá ${nome},o tamanho do seu terreno é de  <span style="color:green">${TamanhoTerreno}m2</span>, não investindo no nosso projeto você
+    continuará perdendo cerca de <span style="color:red">${PorcentagemPerdaCacau}M2</span> (HECTARES)da sua plantação de cacau</span><br> `
+     Valor.innerHTML+=`<span style="color:black">Olá ${nome},não utilizando nosso produto a sua margem de lucro se manterá cerca de  <span style="color:red">${Lucro}M</span>, porém se implementar nosso projeto vc terá um aumento de cerca de <span style="color:green">${AumentoLucro}%</span> `
+                                                                                                                                                                            
+                                                      
+    }                                           
+</script> 
